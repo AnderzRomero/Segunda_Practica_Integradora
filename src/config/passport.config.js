@@ -44,7 +44,6 @@ const initializeStrategies = () => {
         clientSecret: 'c07df5b4bf34171576817394190b1424b2f3b45b',
         callbackURL: 'http://localhost:8080/api/sessions/githubcallback'
     }, async (accessToken, refreshToken, profile, done) => {
-        // console.log(profile);
         const { email, name } = profile._json;
 
         const user = await usersServices.getBy({ email });
